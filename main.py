@@ -1,3 +1,4 @@
+import os.path
 from datetime import datetime, timedelta
 from requests import get
 
@@ -71,6 +72,18 @@ def save_to_file(file_name, content):
 
 def main():
     latitude, longitude, searched_date = give_data()
+
+    # Sprawdzenie, czy w pliku sa juz zapisane informacje o opadach w danym miejscu i dniu
+    file_name = 'informacja_o_opadach.txt'
+    if os.path.exists(file_name):
+        with open(file_name, 'r', encoding='utf-8') as file:
+            lines = file.readlines()
+            for line in lines:
+                if searched_date.strftime('%Y-%m-%d') in line and str(latitude) in line and str(longitude) in line:
+                    print(line.strip())
+                    return
+
+    # Zapytanie do API, jesli dane nie sa zapisane w pliku
     response = download_data(latitude, longitude, searched_date)
     precipitation_info = check_precipitation(response, latitude, longitude, searched_date)
     save_to_file('informacja_o_opadach.txt', precipitation_info)
