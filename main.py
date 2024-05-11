@@ -49,23 +49,31 @@ def check_precipitation(response, latitude, longitude, searched_date):
 
     # Sprawdzenie wystepowanie jakichkolwiek opadow danego dnia
     if any(precipitation > 0.0 for precipitation in hourly_precipitation):
-        print(f'Dnia {searched_date} pod szerokoscia geograficzna {latitude} '
-              f'i dlugoscia geograficzna {longitude} wystapia opady.')
+        return (f'Dnia {searched_date} pod szerokoscia geograficzna {latitude} '
+                f'i dlugoscia geograficzna {longitude} wystapia opady.')
 
     # Sprawdzenie braku jakichkolwiek opadow danego dnia
     elif all(precipitation == 0.0 for precipitation in hourly_precipitation):
-        print(f'Dnia {searched_date} pod szerokoscia geograficzna {latitude} '
-              f'i dlugoscia geograficzna {longitude} nie wystapia opady.')
+        return (f'Dnia {searched_date} pod szerokoscia geograficzna {latitude} '
+                f'i dlugoscia geograficzna {longitude} nie wystapia opady.')
 
     else:
-        print(f'Nie stwierdzono, czy dnia {searched_date} pod szerokoscia geograficzna {latitude} '
-              f'i dlugoscia geograficzna {longitude} wystapia opady.')
+        return (f'Nie stwierdzono, czy dnia {searched_date} pod szerokoscia geograficzna {latitude} '
+                f'i dlugoscia geograficzna {longitude} wystapia opady.')
+
+
+def save_to_file(file_name, content):
+    with open(file_name, 'a', encoding='utf-8') as file:
+        file.write(content + '\n')
+    print(content)
+    print(f'Informacje o opadach zostaly zapisane do pliku {file_name}.')
 
 
 def main():
     latitude, longitude, searched_date = give_data()
     response = download_data(latitude, longitude, searched_date)
-    check_precipitation(response, latitude, longitude, searched_date)
+    precipitation_info = check_precipitation(response, latitude, longitude, searched_date)
+    save_to_file('informacja_o_opadach.txt', precipitation_info)
 
 
 if __name__ == '__main__':
