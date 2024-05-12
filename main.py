@@ -52,24 +52,6 @@ def download_data(latitude, longitude, searched_date):
     return response
 
 
-# def check_precipitation(response, latitude, longitude, searched_date):
-#     data = response.json()
-#     hourly_precipitation = data['hourly']['rain']
-#
-#     # Sprawdzenie wystepowanie jakichkolwiek opadow danego dnia
-#     if any(precipitation > 0.0 for precipitation in hourly_precipitation):
-#         return (f'Dnia {searched_date} pod szerokoscia geograficzna {latitude} '
-#                 f'i dlugoscia geograficzna {longitude} wystapia opady.')
-#
-#     # Sprawdzenie braku jakichkolwiek opadow danego dnia
-#     elif all(precipitation == 0.0 for precipitation in hourly_precipitation):
-#         return (f'Dnia {searched_date} pod szerokoscia geograficzna {latitude} '
-#                 f'i dlugoscia geograficzna {longitude} nie wystapia opady.')
-#
-#     else:
-#         return (f'Nie stwierdzono, czy dnia {searched_date} pod szerokoscia geograficzna {latitude} '
-#                 f'i dlugoscia geograficzna {longitude} wystapia opady.')
-
 def check_precipitation(response, latitude, longitude, searched_date):
     data = response.json()
 
