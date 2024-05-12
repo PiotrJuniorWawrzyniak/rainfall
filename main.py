@@ -3,16 +3,16 @@ from datetime import datetime, timedelta
 from requests import get
 
 
-def give_data():
+def enter_data():
     while True:
         try:
             latitude = float(input('Podaj szerokosc geograficzna (-90 do 90): '))
             if -90 <= latitude <= 90:
                 break
             else:
-                print('Blad: Wprowadz wartosc z zakresu od -90 do 90.')
+                print('Blad! Wprowadz wartosc z zakresu od -90 do 90.')
         except ValueError:
-            print('Blad: Wprowadz poprawna wartosc liczbowa.')
+            print('Blad! Wprowadz poprawna wartosc liczbowa.')
 
     while True:
         try:
@@ -20,14 +20,22 @@ def give_data():
             if -180 <= longitude <= 180:
                 break
             else:
-                print('Blad: Wprowadz wartosc z zakresu od -180 do 180.')
+                print('Blad! Wprowadz wartosc z zakresu od -180 do 180.')
         except ValueError:
-            print('Blad: Wprowadz poprawna wartosc liczbową.')
+            print('Blad! Wprowadz poprawna wartosc liczbową.')
 
     current_date = datetime.now().date()
-    searched_date = input('Podaj date w formacie YYYY-MM-DD: ')
-    if not searched_date:
-        searched_date = current_date + timedelta(days=1)
+    while True:
+        searched_date_str = input('Podaj date w formacie YYYY-MM-DD: ')
+        if searched_date_str:
+            try:
+                searched_date = datetime.strptime(searched_date_str, '%Y-%m-%d').date()
+                break
+            except ValueError:
+                print('Blad! Wprowadz date w formacie YYYY-MM-DD.')
+        else:
+            searched_date = current_date + timedelta(days=1)
+            break
 
     return latitude, longitude, searched_date
 
@@ -71,7 +79,7 @@ def save_to_file(file_name, content):
 
 
 def main():
-    latitude, longitude, searched_date = give_data()
+    latitude, longitude, searched_date = enter_data()
 
     # Sprawdzenie, czy w pliku sa juz zapisane informacje o opadach w danym miejscu i dniu
     file_name = 'informacja_o_opadach.txt'
