@@ -1,18 +1,3 @@
-Dnia 2024-05-12 pod szerokoscia geograficzna 87.0 i dlugoscia geograficzna 87.0 nie wystapia opady.
-Dnia 2024-05-12 pod szerokoscia geograficzna 78.0 i dlugoscia geograficzna 78.0 nie wystapia opady.
-Dnia 2024-05-12 pod szerokoscia geograficzna 60.0 i dlugoscia geograficzna 70.0 wystapia opady.
-Dnia 2024-05-12 pod szerokoscia geograficzna 88.0 i dlugoscia geograficzna 88.0 nie wystapia opady.
-Dnia 2024-05-13 pod szerokoscia geograficzna 44.0 i dlugoscia geograficzna 44.0 wystapia opady.
-Dnia 2024-05-13 pod szerokoscia geograficzna 6.0 i dlugoscia geograficzna 6.0 nie wystapia opady.
-Dnia 2024-05-27 pod szerokoscia geograficzna 7.0 i dlugoscia geograficzna 7.0 wystapia opady.
-Dnia 2024-05-27 pod szerokoscia geograficzna 4.0 i dlugoscia geograficzna 4.0 wystapia opady.
-Dnia 2024-05-26 pod szerokoscia geograficzna 90.0 i dlugoscia geograficzna -180.0 nie wystapia opady.
-Dnia 2024-05-25 pod szerokoscia geograficzna 65.0 i dlugoscia geograficzna 76.0 nie wystapia opady.
-Dnia 2024-05-13 pod szerokoscia geograficzna 4.0 i dlugoscia geograficzna 5.0 nie wystapia opady.
-Dnia 2024-05-20 pod szerokoscia geograficzna 70.0 i dlugoscia geograficzna 80.0 nie wystapia opady.
-Dnia 2024-05-13 pod szerokoscia geograficzna -89.0 i dlugoscia geograficzna -179.0 nie wystapia opady.
-Dnia 2024-05-15 pod szerokoscia geograficzna 56.0 i dlugoscia geograficzna 76.0 nie wystapia opady.
-Nie stwierdzono, czy dnia 2024-12-23 pod szerokoscia geograficzna 50.0 i dlugoscia geograficzna 60.0 wystapia opady.
-Nie stwierdzono, czy dnia 2024-06-17 pod szerokoscia geograficzna 79.23 i dlugoscia geograficzna 87.54 wystapia opady.
-Dnia 2024-05-13 pod szerokoscia geograficzna 89.0 i dlugoscia geograficzna 160.0 nie wystapia opady.
-Nie stwierdzono, czy dnia 2025-12-31 pod szerokoscia geograficzna -90.0 i dlugoscia geograficzna -180.0 wystapia opady.
+2024-05-19: Dnia 2024-05-19 pod szerokością geograficzną 55.0 i długością geograficzną 99.0 wystąpią opady.
+2024-05-18: Dnia 2024-05-18 pod szerokością geograficzną 36.0 i długością geograficzną 78.0 nie wystąpią opady.
+2024-05-20: Dnia 2024-05-20 pod szerokością geograficzną 90.0 i długością geograficzną 180.0 nie wystąpią opady.
